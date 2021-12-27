@@ -3,6 +3,7 @@ package com.joaoptgaino.authapp.registration;
 import com.joaoptgaino.authapp.appuser.AppUser;
 import com.joaoptgaino.authapp.appuser.AppUserRole;
 import com.joaoptgaino.authapp.appuser.AppUserService;
+import com.joaoptgaino.authapp.appuser.CreateAppUserDto;
 import com.joaoptgaino.authapp.email.EmailSender;
 import com.joaoptgaino.authapp.email.EmailService;
 import com.joaoptgaino.authapp.registration.token.ConfirmationToken;
@@ -25,7 +26,7 @@ public class RegistrationService {
     private final EmailSender emailSender;
 
     //TODO: Create user DTO
-    public String register(RegistrationRequest request) {
+    public String register(CreateAppUserDto request) {
         boolean isValidEmail = emailValidator.test(request.getEmail());
 
         if (!isValidEmail) {
